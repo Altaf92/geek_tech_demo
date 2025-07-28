@@ -848,15 +848,11 @@ p:last-child {
 
 .btn:hover,
 .btn:focus {
-<<<<<<< HEAD
-  background-color: #3DEBF7;
   color: #ffffff;
-  border-color: #3DEBF7;
-=======
+  border-color: #540cb4;
   background-color: #540cb4;
   color: #ffffff;
   border-color: #540cb4;
->>>>>>> master
   text-decoration: none;
   opacity: 1;
 }
@@ -869,55 +865,34 @@ p:last-child {
 }
 
 .btn-secondary:hover {
-<<<<<<< HEAD
-  background-color: #3DEBF7;
   color: #ffffff;
-  border-color: #3DEBF7;
-=======
   background-color: #540cb4;
   color: #ffffff;
   border-color: #540cb4;
->>>>>>> master
 }
 
 .btn-light,
 .btn-light:focus {
   background-color: #ffffff;
-<<<<<<< HEAD
-  color: #3DEBF7;
-=======
   color: #540cb4;
->>>>>>> master
   border: 1px solid #ffffff;
 }
 
 .btn-light:hover {
   background-color: #f0f0f0;
-<<<<<<< HEAD
-  color: #3DEBF7;
-=======
   color: #540cb4;
->>>>>>> master
   border-color: #f0f0f0;
 }
 
 .btn-gray,
 .btn-gray:focus {
   background-color: #f3f3f3;
-<<<<<<< HEAD
-  color: #3DEBF7;
-=======
   color: #540cb4;
->>>>>>> master
   border: 1px solid #f3f3f3;
 }
 
 .btn-gray:hover {
-<<<<<<< HEAD
-  background-color: #6625B9;
   color: #ffffff;
-  border-color: #6625B9;
-=======
   background-color: #540cb4;
   color: #ffffff;
   border-color: #540cb4;
@@ -926,25 +901,15 @@ p:last-child {
 
 .btn-outline-primary,
 .btn-outline-primary:focus {
-<<<<<<< HEAD
-  color: #6625B9;
-  border: 1px solid #6625B9;
-=======
   color: #540cb4;
   border: 1px solid #540cb4;
->>>>>>> master
   background-color: transparent;
 }
 
 .btn-outline-primary:hover {
   color: #ffffff;
-<<<<<<< HEAD
-  background-color: #6625B9;
-  border-color: #6625B9;
-=======
   background-color: #540cb4;
   border-color: #540cb4;
->>>>>>> master
 }
 
 .btn-outline-secondary,
@@ -967,11 +932,7 @@ p:last-child {
 }
 
 .btn-outline-light:hover {
-<<<<<<< HEAD
-  color: #3DEBF7;
-=======
   color: #540cb4;
->>>>>>> master
   border-color: #ffffff;
   background-color: #ffffff;
 }
@@ -1925,7 +1886,7 @@ textarea:-ms-input-placeholder {
 .page-header {
   background-color: #f3f3f3;
   padding: 180px 0;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1966,7 +1927,7 @@ textarea:-ms-input-placeholder {
   font-weight: 700;
   line-height: 1.3;
   margin: 0 auto 10px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .section-header p {
@@ -8509,13 +8470,10 @@ background: linear-gradient(109deg,rgba(97, 29, 207, 0.76) 27%, rgba(55, 235, 24
 .blog-item .date {
   font-size: 12px;
   position: absolute;
-<<<<<<< HEAD
-  top: 10px;
-  left: 10px;
-=======
+  top: 0px !important;
+    left: 0px !important;
   top: 0px;
   left: 0px;
->>>>>>> master
   background: #ffffff;
   padding: 10px;
   text-transform: uppercase;
@@ -12744,11 +12702,8 @@ background: linear-gradient(109deg,rgba(97, 29, 207, 0.76) 27%, rgba(55, 235, 24
 
 .footer .footer-top {
   color: #FFF;
-<<<<<<< HEAD
   background-color: #1d1d88;
-=======
   background-color: #6625B9;
->>>>>>> master
   border-top: 1px solid #6625B9;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -12756,9 +12711,9 @@ background: linear-gradient(109deg,rgba(97, 29, 207, 0.76) 27%, rgba(55, 235, 24
 
 .footer .footer-top .h4 {
   color: #FFF;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 0 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .footer-links ul {
@@ -12821,17 +12776,14 @@ background: linear-gradient(109deg,rgba(97, 29, 207, 0.76) 27%, rgba(55, 235, 24
 
 .footer-bottom {
   color: #ffffff;
-<<<<<<< HEAD
   background: #6625B9;
   clear: both;
   padding: 10px 0;
-  border-top: 1px solid #40516d;
-=======
+  /* border-top: 1px solid #40516d; */
   background: #5417A7;
   clear: both;
   padding: 10px 0;
   /* border-top: 1px solid #40516d; */
->>>>>>> master
 }
 
 .payment-icons li {

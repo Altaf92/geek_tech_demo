@@ -42,7 +42,7 @@ const BlogSection = () => {
             {blogPosts.map((post) => {
               const { dt, mt, yr } = formatDate(post.date);
               return (
-                <div className="col-md-3 mb-3 " key={post.id}>
+                <div className="col-xl-3 col-lg-4 col-md-6 col-12 mb-3 " key={post.id}>
                   <div className="blog-item shadow-lg">
                     <div className="blog-article zoomscal-hov">
                       <div className="blog-img position-relative">
@@ -63,7 +63,7 @@ const BlogSection = () => {
                         </div>
                       </div>
                       <div className="blog-content p-3 mt-3">
-                        <h3 className="h5 mb-2">
+                        <h3 className="h5 mb-2 mt-4">
                           <Link href={`/blog/${post.id}`}>{post.title}</Link>
                         </h3>
                         <p className="content mb-2">{post.excerpt}...</p>

@@ -1,20 +1,8 @@
 const ProductList = [
 
-  //   mecafee product section 
+  //   mecafee product section
 
-<<<<<<< HEAD
-  {
-    id: 1,
-    name: "McAfee AntiVirus – 1-Year / 1-PC – TSS",
-    brand: "McAfee",
-    tags: ["1-Device", "1-Year", "Antivirus", "McAfee"],
-    category: ["Antivirus", "McAfee"],
-    price: "44.99",
-    image: "/assets/images/mcafee/1.webp",
-    shortDescription:
-      "Protect your computer with our advanced antivirus and malware protection service. This solution is designed to safeguard your system against harmful threats, ensuring your data and privacy stay secure. Our team installs reliable, real-time protection that continuously monitors your PC,  blocks suspicious activity, and prevents infections before they cause damage. Ideal for both personal and business use, this service enhances your device's performance by keeping it clean and threat-free. Features: Comprehensive virus and malware protection Real-time threat detection and blocking Scheduled system scans for ongoing safety Automatic updates for the latest threats Performance optimization with security cleanup. Comprehensive virus and malware protection Real-time threat detection and blocking Scheduled system scans for ongoing safety Automatic updates for the latest threats Performance optimization with security cleanup."
-  },
-=======
+
   // {
   //   id: 1,
   //   name: "McAfee AntiVirus – 1-Year / 1-PC – TSS",
@@ -26,7 +14,6 @@ const ProductList = [
   //   shortDescription:
   //     "Protect your computer with our advanced antivirus and malware protection service. This solution is designed to safeguard your system against harmful threats, ensuring your data and privacy stay secure. Our team installs reliable, real-time protection that continuously monitors your PC,  blocks suspicious activity, and prevents infections before they cause damage. Ideal for both personal and business use, this service enhances your device's performance by keeping it clean and threat-free. Features: Comprehensive virus and malware protection Real-time threat detection and blocking Scheduled system scans for ongoing safety Automatic updates for the latest threats Performance optimization with security cleanup. Comprehensive virus and malware protection Real-time threat detection and blocking Scheduled system scans for ongoing safety Automatic updates for the latest threats Performance optimization with security cleanup."
   // },
->>>>>>> master
 
   {
     id: 2,

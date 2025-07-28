@@ -47,7 +47,7 @@ export default function ServiceDetailPage(props) {
       <div className="container-fluid">
         <div className="row">
           {/* Left Image */}
-          <div className="col-lg-6">
+          <div className="col-lg-6 mb-3">
             <Image
               src={service.image}
               alt={service.name}
@@ -58,7 +58,7 @@ export default function ServiceDetailPage(props) {
           </div>
 
           {/* Right Content */}
-          <div className="col-lg-6">
+          <div className="col-lg-6 mb-3">
             <h2 className='fs-2'>{service.name}</h2>
 
             <div className="product-review d-flex align-items-center mb-3">
@@ -71,7 +71,7 @@ export default function ServiceDetailPage(props) {
               <span className="caption ms-1">({service.review} Reviews)</span>
             </div>
 
-            <p className="mt-3 fs-6">{service.shortDescription.description}</p>
+            <p className="mt-3 fs-6 text-justify">{service.shortDescription.description}</p>
 
             <div className="row">
               {/* Installation */}
@@ -105,7 +105,7 @@ export default function ServiceDetailPage(props) {
         </div>
 
         {/* Nav Tabs */}
-        <div className="tabs-listing section  pb-0 mt-4">
+        <div className="tabs-listing section  pb-0 ">
           <ul className="product-tabs style2 list-unstyled d-flex-wrap d-flex-justify-start d-none d-md-flex">
             <li className={activeTab === 'description' ? 'active' : ''}>
               <a className="tablink" onClick={() => setActiveTab('description')}>Description</a>
@@ -123,8 +123,8 @@ export default function ServiceDetailPage(props) {
             <div className="product-description mt-4">
               <div className="col-12 col-sm-12 col-md-8 col-lg-12 mt-3">
                 <h2>Description</h2>
-                <p>Our Printer Installation and Configuration service ensures that your device is set up correctly for smooth and efficient operation. From connecting to your Wi-Fi network to testing print functionality, our technicians provide complete support tailored to your environment. Whether for home or office use, we help you get the most out of your printer with proper setup, configuration, and a brief walkthrough of essential features.</p>
-                <p>This service includes expert assistance with driver installation, wireless connectivity, and print queue setup. We ensure your printer communicates seamlessly with your devices and networks, so you're ready to print without hassle.</p>
+                <p className='text-justify'>Our Printer Installation and Configuration service ensures that your device is set up correctly for smooth and efficient operation. From connecting to your Wi-Fi network to testing print functionality, our technicians provide complete support tailored to your environment. Whether for home or office use, we help you get the most out of your printer with proper setup, configuration, and a brief walkthrough of essential features.</p>
+                <p className='text-justify'>This service includes expert assistance with driver installation, wireless connectivity, and print queue setup. We ensure your printer communicates seamlessly with your devices and networks, so you're ready to print without hassle.</p>
               </div>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function ServiceDetailPage(props) {
         </div>
 
         {/* Related Services */}
-        <div className="container-fluid py-5">
+        <div className="container-fluid py-4">
           <h2 className="mb-4">Related Services</h2>
           {relatedServices.length > 0 ? (
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">

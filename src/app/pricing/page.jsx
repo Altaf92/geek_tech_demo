@@ -69,7 +69,7 @@ const plans = [
 
 const PricingPlans = () => {
   return (
-    <div className="container-fluid w-100 py-5" id="pricing-plans">
+    <div className="w-100 px-0" id="pricing-plans">
       {/* Page Header */}
       <div className="page-header text-center w-100">
         <div className="container-fluid">
@@ -89,7 +89,7 @@ const PricingPlans = () => {
         </div>
       </div>
 
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" >
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 px-5 mb-5" >
         {plans.map((plan) => (
           <div
             className="col"

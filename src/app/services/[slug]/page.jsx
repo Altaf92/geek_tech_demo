@@ -50,7 +50,7 @@ export default function ServiceCategoryPage({ params }) {
           <div className="grid-products grid-view-items pro-hover3">
             <div className="row">
               {filteredServices.map((service) => (
-              <div className={filteredServices.length === 2 ? 'col-6 mb-4' : 'col-3 mb-4'}  key={service.id} >
+                <div className={filteredServices.length === 2 ? 'col-6  mb-4' : 'col-lg-3 col-md-4 col-12 mb-4'} key={service.id} >
                   <div className="card h-100 shadow-lg img-card">
                     <Image
                       src={service.image}

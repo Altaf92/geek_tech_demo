@@ -65,12 +65,12 @@ const ServiceSection = () => {
             {/* Services */}
             <div className="container mb-5">
                 <div className="row my-4">
-                    <h1 className='mb-1 fs-2'>OUR POPULAR SERVICES</h1>
+                    <h2 className='mb-0 fs-2'>Our Popular Services</h2>
                     {/* <p className='text-dark'>Explore what we offer to simplify your digital lifestyle.</p> */}
                 </div>
                 <div className="row g-4">
                     {services.map((service, index) => (
-                        <div key={index} className="col-md-4">
+                        <div key={index} className="col-md-6 col-lg-4">
                             <div className="card h-100 shadow-sm">
                                 <Image src={service.image} className="card-img-top" alt={service.title} width={100} height={100} />
                                 <div className="card-body">

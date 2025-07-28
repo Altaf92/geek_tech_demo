@@ -11,35 +11,59 @@ const Products = () => {
     const [selectedYears, setSelectedYears] = useState([]);
 
     const handleFilterChange = (type, value) => {
-        const setters = {
+        const map = {
             brand: [selectedBrands, setSelectedBrands],
             device: [selectedDevices, setSelectedDevices],
             year: [selectedYears, setSelectedYears],
         };
-        const [currentState, setter] = setters[type];
-        if (currentState.includes(value)) {
-            setter(currentState.filter((item) => item !== value));
-        } else {
-            setter([...currentState, value]);
-        }
+        const [current, setter] = map[type];
+        setter(
+            current.includes(value)
+                ? current.filter(item => item !== value)
+                : [...current, value]
+        );
     };
 
-    const filteredProducts = Object.values(ProductList).filter((product) => {
-        const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-        const matchesDevice = selectedDevices.length === 0 || selectedDevices.some((tag) => product.tags.includes(tag));
-        const matchesYear = selectedYears.length === 0 || selectedYears.some((tag) => product.tags.includes(tag));
+    const filteredProducts = ProductList.filter(product => {
+        const matchesBrand = !selectedBrands.length || selectedBrands.includes(product.brand);
+        const matchesDevice = !selectedDevices.length || selectedDevices.some(tag => product.tags.includes(tag));
+        const matchesYear = !selectedYears.length || selectedYears.some(tag => product.tags.includes(tag));
         return matchesBrand && matchesDevice && matchesYear;
     });
 
+    const brands = ['McAfee', 'Norton', 'Panda Dome', 'Webroot'];
+    const devices = ['1-Device', '2-Device', '3-Device', '5-Device', '10-Device', 'Unlimited-Device'];
+    const years = ['1-Year', '2-Year', '3-Year'];
+
+    const renderFilter = (title, list, type) => (
+        <div className="sidebar-widget filterBox">
+            <div className="widget-title">
+                <h2>{title}</h2>
+            </div>
+            <div className="widget-content filterDD">
+                <ul className="clearfix">
+                    {list.map((item, index) => {
+                        const id = `${type}-${index}`;
+                        return (
+                            <li key={item}>
+                                <input type="checkbox" id={id} onChange={() => handleFilterChange(type, item)} />
+                                <label htmlFor={id}><span></span>{item.replace('-', ' ')}</label>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
+        </div>
+    );
+
     return (
         <div id="page-content">
+            {/* Page Header */}
             <div className="page-header text-center">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-12 d-flex justify-content-between align-items-center">
-                            <div className="page-title">
-                                <h1>Products</h1>
-                            </div>
+                            <div className="page-title"><h1>Products</h1></div>
                             <div className="breadcrumbs">
                                 <Link href="/">Home</Link>
                                 <span className="main-title">
@@ -51,95 +75,26 @@ const Products = () => {
                 </div>
             </div>
 
+            {/* Main Content */}
             <div className="container-fluid">
                 <div className="row">
                     {/* Sidebar Filters */}
                     <div className="col-lg-3 sidebar sidebar-bg filterbar">
                         <div className="sidebar-tags sidebar-sticky clearfix">
-                            {/* Brand Filter */}
-                            <div className="sidebar-widget filterBox">
-                                <div className="widget-title">
-                                    <h2>Brands</h2>
-                                </div>
-                                <div className="widget-content filterDD">
-                                    <ul className="clearfix">
-                                        {['McAfee', 'Norton', 'Panda Dome', 'Webroot'].map((brand, index) => {
-                                            const inputId = `brand-${index}`;
-                                            return (
-                                                <li key={brand}>
-                                                    <input
-                                                        type="checkbox"
-                                                        id={inputId}
-                                                        onChange={() => handleFilterChange('brand', brand)}
-                                                    />
-                                                    <label htmlFor={inputId}><span></span>{brand}</label>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            {/* Device Support Filter */}
-                            <div className="sidebar-widget filterBox">
-                                <div className="widget-title">
-                                    <h2>Device Support</h2>
-                                </div>
-                                <div className="widget-content filterDD">
-                                    <ul className="clearfix">
-                                        {['1-Device', '2-Device', '3-Device', '5-Device', '10-Device', 'Unlimited-Device'].map((device, index) => {
-                                            const inputId = `device-${index}`;
-                                            return (
-                                                <li key={device}>
-                                                    <input
-                                                        type="checkbox"
-                                                        id={inputId}
-                                                        onChange={() => handleFilterChange('device', device)}
-                                                    />
-                                                    <label htmlFor={inputId}><span></span>{device.replace('-', ' ')}</label>
-                                                </li>
-                                            );
-                                        })}
-
-                                    </ul>
-                                </div>
-                            </div>
-
-                            {/* Support Year Filter */}
-                            <div className="sidebar-widget filterBox">
-                                <div className="widget-title">
-                                    <h2>Support Year</h2>
-                                </div>
-                                <div className="widget-content filterDD">
-                                    <ul className="clearfix">
-                                        {['1-Year', '2-Year', '3-Year'].map((year, index) => {
-                                            const inputId = `year-${index}`;
-                                            return (
-                                                <li key={year}>
-                                                    <input
-                                                        type="checkbox"
-                                                        id={inputId}
-                                                        onChange={() => handleFilterChange('year', year)}
-                                                    />
-                                                    <label htmlFor={inputId}><span></span>{year.replace('-', ' ')}</label>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                </div>
-                            </div>
+                            {renderFilter('Brands', brands, 'brand')}
+                            {renderFilter('Device Support', devices, 'device')}
+                            {renderFilter('Support Year', years, 'year')}
                         </div>
                     </div>
 
                     {/* Product List */}
                     <div className="col-lg-9 main-col">
-                        <div className="grid-products grid-view-items pro-hover3">
-                            <div className="grid-products grid-view-items">
-                            <div className="row col-row product-options row-cols-xl-4 row-cols-lg-4 row-cols-md-3 row-cols-sm-3 row-cols-2">
+                        <div className="grid-products grid-view-items">
+                            <div className="row col-row product-options row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-2">
                                 {filteredProducts.length > 0 ? (
-                                    filteredProducts.slice(0, 30).map((product) => (
+                                    filteredProducts.slice(0, 30).map(product => (
                                         <div key={product.id} className="item col-item">
-                                            <div className="product-box" >
+                                            <div className="product-box">
                                                 <div className="product-image">
                                                     <Link href={`/products/${product.id}`} className="product-img">
                                                         <Image
@@ -162,10 +117,9 @@ const Products = () => {
                                                         </div>
                                                     </div>
                                                     <div className="product-review">
-                                                        <i className="icon anm anm-star"></i>
-                                                        <i className="icon anm anm-star"></i>
-                                                        <i className="icon anm anm-star"></i>
-                                                        <i className="icon anm anm-star"></i>
+                                                        {[...Array(4)].map((_, i) => (
+                                                            <i key={i} className="icon anm anm-star"></i>
+                                                        ))}
                                                         <i className="icon anm anm-star-o"></i>
                                                         <span className="caption ms-1">0 Reviews</span>
                                                     </div>
@@ -194,7 +148,6 @@ const Products = () => {
                                                             </Link>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>

@@ -59,7 +59,9 @@ export default function BlogDetailPage({ params }) {
                     <div className="col-lg-3 blog-sidebar sidebar sidebar-bg">
                         <div className="sidebar-tags sidebar-sticky clearfix">
                             <div className="sidebar-widget clearfix">
-                                <div className="widget-title"><h2>Recent Posts</h2></div>
+                                <div className="widget-title">
+                                    <h2>Recent Posts</h2>
+                                </div>
                                 <div className="widget-content">
                                     <div className="list list-sidebar-products">
                                         {blogPosts.slice(0, 10).map((post) => (
@@ -90,60 +92,57 @@ export default function BlogDetailPage({ params }) {
 
 
                     {/* Main Content */}
-                    <div className="col-lg-9 main-col">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-9 main-col">
                         <div className="blog-article">
                             <div className="blog-img mb-3">
                                 <Image
-                                    className="rounded-0 blur-up lazyloaded"
+                                    className="rounded-0 blur-up"
                                     src={post.image}
-                                    alt={post.title}
+                                    alt="New shop collection our shop"
                                     width={1200}
                                     height={700}
                                 />
                             </div>
                             <div className="blog-content">
                                 <h2 className="h1">{post.title}</h2>
-                                <ul className="publish-detail d-flex-wrap">
-                                    <li><i className="icon anm anm-user-al"></i> <span className="opacity-75 me-1">Posted by:</span> Admin</li>
-                                    <li><i className="icon anm anm-clock-r"></i> <time>{formattedDate}</time></li>
-                                    <li><i className="icon anm anm-comments-l"></i> <a href="#">2 Comments</a></li>
-                                    <li><i className="icon anm anm-tag-r"></i><span className="opacity-75">Posted in</span><a className="ms-1" href="#">Security</a>, <a className="ms-1" href="#">Software</a></li>
-                                </ul>
-                                <hr />
-                                <div className="content">
-                                    <p>{post.excerpt}</p>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, making it look like readable English.</p>
+                                <div>
+                                    {post.excerpt}
                                 </div>
-                                <hr />
 
+                                <hr />
                                 {/* Comment Form */}
                                 <div className="formFeilds comment-form form-vertical">
                                     <form method="post" action="#">
                                         <h2 className="mb-3">Leave a Comment</h2>
                                         <div className="row">
-                                            <div className="col-lg-6">
+                                            <div className="col-md-6">
                                                 <div className="form-group">
-                                                    <input type="text" id="commentName" placeholder="Name" required />
+                                                    <label htmlFor="commentName" className="d-none">Name</label>
+                                                    <input type="text" id="commentName" name="contact[name]" placeholder="Name" required />
                                                 </div>
                                             </div>
-                                            <div className="col-lg-6">
+                                            <div className="col-md-6">
                                                 <div className="form-group">
-                                                    <input type="email" id="commentEmail" placeholder="Email" required />
+                                                    <label htmlFor="commentEmail" className="d-none">Email</label>
+                                                    <input type="email" id="commentEmail" name="contact[email]" placeholder="Email" required />
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div className="row">
                                             <div className="col-12">
                                                 <div className="form-group">
-                                                    <textarea rows="5" id="commentMessage" placeholder="Write Comment" required></textarea>
+                                                    <label htmlFor="commentMessage" className="d-none">Message</label>
+                                                    <textarea rows="5" id="commentMessage" name="contact[body]" placeholder="Write Comment" required></textarea>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div className="row">
                                             <div className="col-12">
                                                 <input type="submit" className="btn btn-lg" value="Post comment" />
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-
                             </div>
                         </div>
                     </div>
