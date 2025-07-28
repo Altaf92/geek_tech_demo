@@ -10,7 +10,7 @@ const HomeProductSection = () => {
     <section className="section product-slider home-product pt-md-4 mt-md-4">
       <div className="container mt-4 mt-md-5">
         <div className="section-header mb-0">
-          <h2 className="text-start mb-0 fs-2">Popular Antivirus</h2>
+          <h2 className="text-start antivirus_title mb-0 fs-2">Popular Antivirus</h2>
         </div>
 
         <div className="grid-products mt-3">
@@ -34,7 +34,7 @@ const HomeProductSection = () => {
                   <div className="product-details text-left">
                     <div className="product-name-price">
                       <div className="product-name">
-                        <Link href={`/products/${product.id}`}>{product.name}</Link>
+                        <h4 className='product_name'><Link href={`/products/${product.id}`}>{product.name}</Link></h4>
                       </div>
                       <div className="product-price m-0">
                         <span className="price">${product.price}</span>

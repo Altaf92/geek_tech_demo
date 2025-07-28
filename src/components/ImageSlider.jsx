@@ -57,7 +57,7 @@ const ImageSlider = () => {
                   <div className="container">
                     <div className="row">
                       <div className="col-md-6 text-white">
-                        <h2 className="display-4 fw-bold mb-3 text-light">{slide.title}</h2>
+                        <h1 className="display-4 fw-bold mb-3 text-light slider-title">{slide.title}</h1>
                         <p className="lead mb-4">{slide.subtitle}</p>
                         <div className="d-flex gap-2 flex-wrap">
                           {slide.ctaButtons.map((btn, i) => (
@@ -89,28 +89,28 @@ const ImageSlider = () => {
               <div className="service-wrap col-item">
                 <div className="service-icon mb-3"><i className="icon anm anm-phone-call-l"></i></div>
                 <div className="service-content">
-                  <h3 className="title mb-2">Call us any time</h3>
+                  <h6 className="title title_support mb-2">Call us any time</h6>
                   <span>Contact us 24/7 hours a day</span>
                 </div>
               </div>
               <div className="service-wrap col-item">
                 <div className="service-icon mb-3"><i className="icon anm anm-truck-l"></i></div>
                 <div className="service-content">
-                  <h3 className="title mb-2">Pickup At Any Store</h3>
+                  <h6 className="title mb-2 title_support">Pickup At Any Store</h6>
                   <span>Free shipping on orders over $65</span>
                 </div>
               </div>
               <div className="service-wrap col-item">
                 <div className="service-icon mb-3"><i className="icon anm anm-credit-card-l"></i></div>
                 <div className="service-content">
-                  <h3 className="title mb-2">Secured Payment</h3>
+                  <h6 className="title mb-2 title_support">Secured Payment</h6>
                   <span>We accept all major credit cards</span>
                 </div>
               </div>
               <div className="service-wrap col-item">
                 <div className="service-icon mb-3"><i className="icon anm anm-redo-l"></i></div>
                 <div className="service-content">
-                  <h3 className="title mb-2">Free Returns</h3>
+                  <h6 className="title mb-2 title_support">Free Returns</h6>
                   <span>30-days free return policy</span>
                 </div>
               </div>

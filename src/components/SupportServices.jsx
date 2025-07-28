@@ -5,7 +5,7 @@ const SupportServices = () => {
   return (
     <section className="support-services-component py-5 mb-5">
       <div className="container text-center service-upper">
-        <h2 className="fw-bold fs-2 text-white">🛠️ Full IT Support at Your Fingertips</h2>
+        <h1 className="it_support_title text-white">🛠️ Full IT Support at Your Fingertips</h1>
         <h3 className="text-muted fs-6 mt-2 text-white">Reliable Help, Always</h3>
         <div className="mt-4">
           <p className="lead text-white">

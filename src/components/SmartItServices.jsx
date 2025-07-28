@@ -46,7 +46,7 @@ const CoreServices = () => {
                 <div className="display-3 mb-3">
                   <i className={`bi ${service.iconClass}`}></i>
                 </div>
-                <h5 className="card-title fw-semibold mb-2">{service.title}</h5>
+                <h4 className="card-title it_service_title mb-2">{service.title}</h4>
                 <p className="card-text mb-3">{service.description}</p>
                 <Link href={service.cta.link} className="btn btn_it_services pill-btn rounded-pill">
                   {service.cta.label}

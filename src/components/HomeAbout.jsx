@@ -20,7 +20,7 @@ const AboutSection = () => {
 
           {/* Right: Content */}
           <div className="col-lg-6">
-            <h2 className="fw-bold mb-3 fs-2">About Us</h2>
+            <h2 className="fw-bold mb-3 about_title">About Us</h2>
             <p className="text-muted mb-4">
               We are a leading smart solutions provider, offering cutting-edge services in home automation,
               security, audio-video integration, and networking. With a passion for innovation and customer
