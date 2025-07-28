@@ -42,7 +42,7 @@ const CoreServices = () => {
         <div className="row justify-content-center">
           {coreServicesData.map((service, index) => (
             <div className="col-md-6 col-lg-3 mb-4" key={index}>
-              <div className="card h-100 shadow rounded-4 text-center it-icon p-4">
+              <div className="card h-100 shadow rounded-4 text-center it-icon py-4 px-3">
                 <div className="display-3 mb-3">
                   <i className={`bi ${service.iconClass}`}></i>
                 </div>
