@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import ProductList from '@/components/ProductList';
+import ProductList from '@/components/ProductList'; // Make sure this is an array, not a component
 
 const Products = () => {
     const [selectedBrands, setSelectedBrands] = useState([]);
@@ -45,9 +45,11 @@ const Products = () => {
                     {list.map((item, index) => {
                         const id = `${type}-${index}`;
                         return (
-                            <li key={item}>
+                            <li key={id}>
                                 <input type="checkbox" id={id} onChange={() => handleFilterChange(type, item)} />
-                                <label htmlFor={id}><span></span>{item.replace('-', ' ')}</label>
+                                <label htmlFor={id}>
+                                    <span></span>{item.replaceAll('-', ' ')}
+                                </label>
                             </li>
                         );
                     })}
@@ -103,6 +105,7 @@ const Products = () => {
                                                             title={product.name}
                                                             width={625}
                                                             height={759}
+                                                            loading="lazy"
                                                             className="lazyloaded"
                                                         />
                                                     </Link>
@@ -125,19 +128,19 @@ const Products = () => {
                                                     </div>
                                                     <div className="button-bottom-action style1">
                                                         <div className="button-left">
-                                                            <Link
-                                                                href="#quickshop_modal"
+                                                            <button
+                                                                type="button"
                                                                 className="btn btn-primary btn-md addtocart quick-shop-modal"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#quickshop_modal"
                                                             >
                                                                 <i className="icon anm anm-bag-l me-2"></i>
                                                                 <span className="text">Add To Cart</span>
-                                                            </Link>
+                                                            </button>
                                                         </div>
                                                         <div className="button-right">
-                                                            <Link
-                                                                href="#quickview-modal"
+                                                            <button
+                                                                type="button"
                                                                 className="btn-icon quickview quick-view-modal"
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#quickview_modal"
@@ -145,7 +148,7 @@ const Products = () => {
                                                                 <span className="icon-wrap d-flex-justify-center h-100 w-100" title="Quick View">
                                                                     <i className="icon anm anm-search-plus-l"></i>
                                                                 </span>
-                                                            </Link>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>

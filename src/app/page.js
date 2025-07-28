@@ -1,12 +1,7 @@
 'use client';
-import Image from "next/image";
 import HomeProductSection from "@/components/HomeProductSection";
-import BrandTabSection from "@/components/BrandTabSection";
 import ImageSlider from "@/components/ImageSlider";
-import CategorySection from "@/components/CategoryList";
-import TestimonialSlider from "@/components/TestimonialSlider";
 import BlogSection from "@/components/BlogSection";
-import ServiceTabSection from "@/components/ServiceTabSection";
 import FaqSection from "@/components/FaqSection";
 import HomeAbout from "@/components/HomeAbout";
 import CoreServices from "@/components/SmartItServices";
